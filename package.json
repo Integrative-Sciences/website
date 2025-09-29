@@ -2,7 +2,7 @@
   "name": "integrative-science-journal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://integrative-sciences.github.io/website",
+  "homepage": "https://integrative.science",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-dialog": "^1.1.15",
