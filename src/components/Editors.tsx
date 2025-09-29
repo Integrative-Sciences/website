@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { bios } from '../bios';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
+import { trackEditorProfileView, trackModalOpen, trackModalClose } from '../lib/analytics';
 
 interface Editor {
   id: number;
@@ -30,6 +31,9 @@ const Editors: React.FC = () => {
       if (editor) {
         setSelectedEditor(editor);
         setIsModalOpen(true);
+        // Track editor profile view
+        trackEditorProfileView(editor.name);
+        trackModalOpen('editor_profile');
       } else {
         // If editor not found, redirect to home
         navigate('/', { replace: true });
@@ -45,6 +49,7 @@ const Editors: React.FC = () => {
   };
 
   const handleCloseModal = () => {
+    trackModalClose('editor_profile');
     navigate('/', { replace: true });
   };
 
