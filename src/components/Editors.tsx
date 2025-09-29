@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { bios } from '../bios';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
@@ -17,7 +17,6 @@ interface Editor {
 const Editors: React.FC = () => {
   const { editorPath } = useParams<{ editorPath: string }>();
   const navigate = useNavigate();
-  const location = useLocation();
   const [selectedEditor, setSelectedEditor] = useState<Editor | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
