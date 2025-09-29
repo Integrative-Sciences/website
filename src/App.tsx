@@ -7,6 +7,7 @@ import Topics from './components/Topics';
 import About from './components/About';
 import Editors from './components/Editors';
 import Footer from './components/Footer';
+import { usePageTracking } from './lib/useAnalytics';
 
 function HomePage() {
   return (
@@ -19,17 +20,26 @@ function HomePage() {
   );
 }
 
+function AppContent() {
+  // Track page views automatically
+  usePageTracking();
+
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/editors/:editorPath" element={<Editors />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/editors/:editorPath" element={<Editors />} />
-        </Routes>
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }
