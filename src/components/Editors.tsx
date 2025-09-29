@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { bios } from '../bios';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
@@ -6,18 +7,45 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 interface Editor {
   id: number;
   name: string;
-  title: string;
-  bio: string;
-  image: string | null;
+  title?: string;
+  bio?: string;
+  image?: string | null;
+  path?: string;
 }
 
 const Editors: React.FC = () => {
+  const { editorPath } = useParams<{ editorPath: string }>();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [selectedEditor, setSelectedEditor] = useState<Editor | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Filter out incomplete entries
+  const completeEditors = bios.filter(bio => bio.title && bio.bio && bio.path);
+
+  // Check if we're on an editor page based on URL
+  useEffect(() => {
+    if (editorPath) {
+      const editor = completeEditors.find(bio => bio.path === editorPath);
+      if (editor) {
+        setSelectedEditor(editor);
+        setIsModalOpen(true);
+      } else {
+        // If editor not found, redirect to home
+        navigate('/', { replace: true });
+      }
+    } else {
+      setSelectedEditor(null);
+      setIsModalOpen(false);
+    }
+  }, [editorPath, navigate, completeEditors]);
+
   const handleViewProfile = (editor: Editor) => {
-    setSelectedEditor(editor);
-    setIsModalOpen(true);
+    navigate(`/editors/${editor.path}`);
+  };
+
+  const handleCloseModal = () => {
+    navigate('/', { replace: true });
   };
 
   return (
@@ -32,7 +60,7 @@ const Editors: React.FC = () => {
           </div>
           
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-stretch">
-            {bios.map((editor, index) => (
+            {completeEditors.map((editor, index) => (
               <Card 
                 key={index} 
                 className="flex-1 max-w-sm mx-auto lg:mx-0 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -72,7 +100,7 @@ const Editors: React.FC = () => {
         </div>
       </section>
 
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      <Dialog open={isModalOpen} onOpenChange={handleCloseModal}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           {selectedEditor && (
             <>

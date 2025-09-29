@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -7,16 +8,29 @@ import About from './components/About';
 import Editors from './components/Editors';
 import Footer from './components/Footer';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
-      <Header />
+    <>
       <Hero />
       <Topics />
       <About />
       <Editors />
-      <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/editors/:editorPath" element={<Editors />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
