@@ -20,11 +20,6 @@ const Editors: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedEditor(null);
-  };
-
   return (
     <>
       <section className="py-16 bg-gradient-to-br from-purple-100 to-blue-100">

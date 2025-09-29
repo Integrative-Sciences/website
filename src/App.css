@@ -477,6 +477,23 @@ body {
   color: white;
 }
 
+.footer-link {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
 .social-links {
   display: flex;
   gap: 1rem;

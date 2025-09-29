@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBrain, FaMicroscope, FaDatabase, FaDna, FaShieldAlt, FaHeart, FaGraduationCap } from 'react-icons/fa';
+import { FaBrain, FaDatabase, FaDna, FaShieldAlt, FaHeart, FaGraduationCap } from 'react-icons/fa';
 import { GiBrainTentacle } from 'react-icons/gi';
 import { IconType } from 'react-icons';
 

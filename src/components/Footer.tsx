@@ -16,20 +16,20 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Research Areas</h4>
             <ul>
-              <li><a href="#">Psychology & Spirituality</a></li>
-              <li><a href="#">Psycho-Neuro-Immunology</a></li>
-              <li><a href="#">Systems Biology</a></li>
-              <li><a href="#">Mental Health</a></li>
+              <li><button className="footer-link">Psychology & Spirituality</button></li>
+              <li><button className="footer-link">Psycho-Neuro-Immunology</button></li>
+              <li><button className="footer-link">Systems Biology</button></li>
+              <li><button className="footer-link">Mental Health</button></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>For Authors</h4>
             <ul>
-              <li><a href="#">Submission Guidelines</a></li>
-              <li><a href="#">Peer Review Process</a></li>
-              <li><a href="#">Publication Ethics</a></li>
-              <li><a href="#">Open Access Policy</a></li>
+              <li><button className="footer-link">Submission Guidelines</button></li>
+              <li><button className="footer-link">Peer Review Process</button></li>
+              <li><button className="footer-link">Publication Ethics</button></li>
+              <li><button className="footer-link">Open Access Policy</button></li>
             </ul>
           </div>
         </div>
@@ -37,9 +37,9 @@ const Footer: React.FC = () => {
         <div className="footer-bottom">
           <p>&copy; 2024 Integrative Science Journal. All rights reserved.</p>
           <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Accessibility</a>
+            <button className="footer-link">Privacy Policy</button>
+            <button className="footer-link">Terms of Service</button>
+            <button className="footer-link">Accessibility</button>
           </div>
         </div>
       </div>
