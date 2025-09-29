@@ -41,7 +41,7 @@ const Editors: React.FC = () => {
                   <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     {editor.image ? (
                       <img
-                        src={`/${editor.image}`}
+                        src={editor.image}
                         alt={editor.name}
                         className="w-full h-full object-cover"
                       />
