@@ -81,7 +81,7 @@ const Editors: React.FC = () => {
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex-shrink-0">
                     {selectedEditor.image ? (
                       <img
-                        src={`/${selectedEditor.image}`}
+                        src={selectedEditor.image}
                         alt={selectedEditor.name}
                         className="w-full h-full object-cover"
                       />
