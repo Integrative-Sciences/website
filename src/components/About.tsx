@@ -8,8 +8,7 @@ const About: React.FC = () => {
           <div className="about-text">
             <h2>About Integrative Science Journal</h2>
             <p className="lead">
-              We are pioneering a new era of scientific publishing that breaks down 
-              traditional disciplinary boundaries to foster truly integrative research.
+              A pioneering platform for interdisciplinary research, integrating immunology, systems biology, psychology, and other fields to foster a holistic understanding of human health and consciousness
             </p>
             
             <div className="mission-vision">
