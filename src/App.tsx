@@ -7,6 +7,7 @@ import Topics from './components/Topics';
 import About from './components/About';
 import Editors from './components/Editors';
 import Footer from './components/Footer';
+import ReviewCriteria from './components/ReviewCriteria';
 import { usePageTracking } from './lib/useAnalytics';
 import { WipProvider } from './components/ui/WipContext';
 import WipModal from './components/ui/WipModal';
@@ -32,6 +33,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/editors/:editorPath" element={<Editors />} />
+        <Route path="/review-criteria" element={<ReviewCriteria />} />
       </Routes>
       <Footer />
     </div>
