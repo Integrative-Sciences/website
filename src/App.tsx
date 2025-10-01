@@ -8,6 +8,8 @@ import About from './components/About';
 import Editors from './components/Editors';
 import Footer from './components/Footer';
 import { usePageTracking } from './lib/useAnalytics';
+import { WipProvider } from './components/ui/WipContext';
+import WipModal from './components/ui/WipModal';
 
 function HomePage() {
   return (
@@ -39,7 +41,10 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <WipProvider>
+        <AppContent />
+        <WipModal />
+      </WipProvider>
     </Router>
   );
 }

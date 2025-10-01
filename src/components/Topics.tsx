@@ -1,4 +1,5 @@
 import React from 'react';
+import { useWip } from './ui/WipContext';
 import { FaBrain, FaDatabase, FaDna, FaShieldAlt, FaHeart, FaGraduationCap } from 'react-icons/fa';
 import { GiBrainTentacle } from 'react-icons/gi';
 import { IconType } from 'react-icons';
@@ -11,6 +12,7 @@ interface Topic {
 }
 
 const Topics: React.FC = () => {
+  const { openWip } = useWip();
   const topics: Topic[] = [
     {
       title: "Integrative Psychology",
@@ -73,7 +75,7 @@ const Topics: React.FC = () => {
                 </div>
                 <h3>{topic.title}</h3>
                 <p>{topic.description}</p>
-                <button className="topic-btn" style={{color: topic.color}}>
+                <button className="topic-btn" style={{color: topic.color}} onClick={() => openWip(`${topic.title} details are a work in progress.`)}>
                   Learn More →
                 </button>
               </div>

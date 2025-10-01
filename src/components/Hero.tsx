@@ -1,6 +1,8 @@
 import React from 'react';
+import { useWip } from './ui/WipContext';
 
 const Hero: React.FC = () => {
+  const { openWip } = useWip();
   return (
     <section className="hero" id="home">
       <div className="hero-content">
@@ -13,8 +15,8 @@ const Hero: React.FC = () => {
             a holistic understanding of human health and consciousness.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Submit Research</button>
-            <button className="btn btn-secondary">Browse Articles</button>
+            <button className="btn btn-primary" onClick={() => openWip('Submit Research is a work in progress.')}>Submit Research</button>
+            <button className="btn btn-secondary" onClick={() => openWip('Browse Articles is a work in progress.')}>Browse Articles</button>
           </div>
         </div>
         <div className="hero-visual">
