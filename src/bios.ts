@@ -4,6 +4,7 @@
 import otavioImage from './assets/otavio.png';
 import lenaImage from './assets/lena.png';
 import alexImage from './assets/alex.jpg';
+import haroldoImage from './assets/haroldo.png';
 
 export const bios = [
     {
@@ -31,7 +32,15 @@ export const bios = [
         "path": "lena"
     },
     {
-        "id": 4, 
+        "id": 4,
+        "name": "Haroldo Dutra Dias",
+        "title": "Associate Editor",
+        "bio": "Haroldo Dutra Dias is a neuroscientist, psychologist, and legal scholar whose work integrates neuroscience, behavior, and social systems. He is currently a postdoctoral fellow at the Psychoneuroimmunology Laboratory in the Department of Clinical Medicine at the University of São Paulo's School of Medicine (FMUSP), under the supervision of Prof. Otavio Cabral Marques, and at the Ann Romney Center for Neurologic Diseases, Brigham and Women's Hospital, Harvard Medical School, under Prof. Rafael Machado Rezende. He completed his PhD in Neuroscience at the Federal University of Minas Gerais (UFMG, 2024), with a collaborative period at the University of Toronto under Prof. Clement Hamani, and his Master's in Neuroscience (UFMG, 2022). His research focuses on psychoneuroimmunology, anxiety, temporomandibular disorders, and the neurobiology of stress-related conditions. He is an associate researcher at the iNuTech Institute for Applied Research in Science, Technology, and Innovation and at the Nautilus Lab (USP). Beyond academia, he serves as Presiding Judge of the 3rd Business, Treasury, and Public Records Court in Contagem, Minas Gerais, bringing a unique perspective on the intersection of neuroscience, human behavior, and social justice. As Associate Editor, he champions integrative approaches that connect neural mechanisms with psychological processes and their broader societal implications.",
+        "image": haroldoImage,
+        "path": "haroldo"
+    },
+    {
+        "id": 5, 
         "name": "Alexandre T. Nogueira",
         "title": "Assistant Editor",
         "bio": "Alexandre T. Nogueira is a software engineer and computer scientist whose work bridges technology, healthcare, and education through integrative systems design. He is Assistant Professor of Computer Science at Champlain College (Vermont, USA), where he teaches AI, algorithms, and game programming. His research and development span medical technology, distributed systems, and educational platforms, with a focus on translating complex technical solutions into practical applications. He is the creator of DocDo, an augmented reality surgical planning platform used in over 600 oncological procedures, and founder of GameGuild, a DAO-based platform integrating blockchain, e-learning, and game development. With a Master's in Computer Science from the Federal University of Piauí and a Bachelor's in Computer Engineering from the State University of Campinas (Unicamp), he has contributed to projects ranging from high-performance computing orchestration to therapeutic VR applications. His work in mobile gaming has reached over 250 million downloads globally. As Assistant Editor, he brings expertise in systems integration, emerging technologies, and the intersection of computational methods with real-world interdisciplinary challenges.",
