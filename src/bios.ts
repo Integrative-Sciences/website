@@ -3,6 +3,7 @@
 // Import images as modules - this is the React best practice
 import otavioImage from './assets/otavio.png';
 import lenaImage from './assets/lena.png';
+import alexImage from './assets/alex.jpg';
 
 export const bios = [
     {
@@ -33,8 +34,8 @@ export const bios = [
         "id": 4, 
         "name": "Alexandre T. Nogueira",
         "title": "Assistant Editor",
-        "bio": "Alexandre T. Nogueira is a Brazilian computer engineer",
+        "bio": "Alexandre T. Nogueira is a software engineer and computer scientist whose work bridges technology, healthcare, and education through integrative systems design. He is Assistant Professor of Computer Science at Champlain College (Vermont, USA), where he teaches AI, algorithms, and game programming. His research and development span medical technology, distributed systems, and educational platforms, with a focus on translating complex technical solutions into practical applications. He is the creator of DocDo, an augmented reality surgical planning platform used in over 600 oncological procedures, and founder of GameGuild, a DAO-based platform integrating blockchain, e-learning, and game development. With a Master's in Computer Science from the Federal University of Piauí and a Bachelor's in Computer Engineering from the State University of Campinas (Unicamp), he has contributed to projects ranging from high-performance computing orchestration to therapeutic VR applications. His work in mobile gaming has reached over 250 million downloads globally. As Assistant Editor, he brings expertise in systems integration, emerging technologies, and the intersection of computational methods with real-world interdisciplinary challenges.",
         "path": "alex",
-        "image": null
+        "image": alexImage
     }
 ]
