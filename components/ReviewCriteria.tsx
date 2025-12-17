@@ -1,5 +1,5 @@
 import React from 'react';
-import { trackPageView } from '../lib/analytics';
+import { trackPageView } from '@/lib/analytics';
 
 const ReviewCriteria: React.FC = () => {
   React.useEffect(() => {

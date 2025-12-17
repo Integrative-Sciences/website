@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './dialog';
 import { useWip } from './WipContext';
-import { trackModalOpen, trackModalClose } from '../../lib/analytics';
+import { trackModalOpen, trackModalClose } from '@/lib/analytics';
 
 const WipModal: React.FC = () => {
   const { state, closeWip } = useWip();

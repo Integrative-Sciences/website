@@ -24,7 +24,7 @@ export default [
     rules: {
       // TypeScript rules
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'true',
       
       // React rules
       'react/react-in-jsx-scope': 'off', // Not needed in Next.js
