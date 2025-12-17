@@ -1,6 +1,6 @@
 import React from 'react';
 import { useWip } from './ui/WipContext';
-import { FaBrain, FaDatabase, FaDna, FaShieldAlt, FaHeart, FaGraduationCap } from 'react-icons/fa';
+import { FaBrain, FaDatabase, FaDna, FaShieldAlt, FaHeart, FaGraduationCap, FaFlask } from 'react-icons/fa';
 import { GiBrainTentacle } from 'react-icons/gi';
 import { IconType } from 'react-icons';
 
@@ -14,6 +14,12 @@ interface Topic {
 const Topics: React.FC = () => {
   const { openWip } = useWip();
   const topics: Topic[] = [
+    {
+      title: "Bioinformatics",
+      description: "Utilizing computational methods to analyze and interpret large-scale biological data.",
+      icon: FaFlask,
+      color: "#06b6d4"
+    },
     {
       title: "Integrative Psychology",
       description: "Investigating the complex interactions between psychological processes, the nervous system, and social behavior.",

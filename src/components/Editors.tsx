@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import Image from 'next/image';
 import { bios } from '../bios';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { trackEditorProfileView, trackModalOpen, trackModalClose } from '../lib/analytics';
+import type { StaticImageData } from 'next/image';
 
 interface Editor {
   id: number;
   name: string;
   title?: string;
   bio?: string;
-  image?: string | null;
+  image?: StaticImageData | string | null;
   path?: string;
 }
 
-const Editors: React.FC = () => {
-  const { editorPath } = useParams<{ editorPath: string }>();
-  const navigate = useNavigate();
+type EditorsProps = {
+  editorPath?: string;
+  navigate?: (path: string, opts?: { replace?: boolean }) => void;
+};
+
+const Editors: React.FC<EditorsProps> = ({ editorPath, navigate }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEditor, setSelectedEditor] = useState<Editor | null>(null);
   
@@ -37,7 +41,7 @@ const Editors: React.FC = () => {
         trackModalOpen('editor_profile');
       } else {
         // If editor not found, redirect to home
-        navigate('/', { replace: true });
+        navigate?.('/', { replace: true });
       }
     } else {
       setSelectedEditor(null);
@@ -88,7 +92,7 @@ const Editors: React.FC = () => {
   }, []);
 
   const handleViewProfile = (editor: Editor) => {
-    navigate(`/editors/${editor.path}`);
+    navigate?.(`/editors/${editor.path}`);
   };
 
   const handleCloseModal = () => {
@@ -96,9 +100,9 @@ const Editors: React.FC = () => {
     setSelectedEditor(null);
     // Navigate to home with hash anchor for the editor using path
     if (selectedEditor && selectedEditor.path) {
-      navigate(`/#${selectedEditor.path}`, { replace: true });
+      navigate?.(`/#${selectedEditor.path}`, { replace: true });
     } else {
-      navigate('/', { replace: true });
+      navigate?.('/', { replace: true });
     }
     // Track modal close
     trackModalClose('editor_profile');
@@ -132,10 +136,12 @@ const Editors: React.FC = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     {editor.image ? (
-                      <img
+                      <Image
                         src={editor.image}
                         alt={editor.name}
                         className="w-full h-full object-cover"
+                        width={400}
+                        height={300}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
@@ -178,10 +184,12 @@ const Editors: React.FC = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex-shrink-0">
                     {selectedEditor.image ? (
-                      <img
+                      <Image
                         src={selectedEditor.image}
                         alt={selectedEditor.name}
                         className="w-full h-full object-cover"
+                        width={64}
+                        height={64}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">

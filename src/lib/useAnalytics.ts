@@ -1,15 +1,17 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { trackPageView } from './analytics';
 
 // Hook to track page views automatically
 export const usePageTracking = (): void => {
-  const location = useLocation();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Track page view when location changes
-    trackPageView(location.pathname + location.search);
-  }, [location]);
+    const query = searchParams?.toString();
+    const url = query ? `${pathname}?${query}` : pathname || '/';
+    trackPageView(url);
+  }, [pathname, searchParams]);
 };
 
 // Hook for tracking component mount/unmount
