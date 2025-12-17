@@ -1,8 +1,8 @@
 "use client";
 
-import Header from "../../../src/components/Header";
-import Footer from "../../../src/components/Footer";
-import Editors from "../../../src/components/Editors";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Editors from "@/components/Editors";
 import { useRouter, useParams } from 'next/navigation';
 
 export default function EditorModalPage() {

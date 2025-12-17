@@ -1,11 +1,11 @@
 "use client";
 
-import Header from "../src/components/Header";
-import Hero from "../src/components/Hero";
-import Topics from "../src/components/Topics";
-import About from "../src/components/About";
-import Editors from "../src/components/Editors";
-import Footer from "../src/components/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Topics from "@/components/Topics";
+import About from "@/components/About";
+import Editors from "@/components/Editors";
+import Footer from "@/components/Footer";
 import { useRouter } from 'next/navigation';
 
 export default function HomePage() {

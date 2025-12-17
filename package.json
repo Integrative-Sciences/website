@@ -38,8 +38,8 @@
     "start": "next start",
     "update-ip:manual": "curl http://localhost:3000/api/update-ip",
     "test": "echo 'No test runner configured for Next.js yet' && exit 0",
-    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
-    "lint:fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "prepare": "husky"
   },
   "eslintConfig": {

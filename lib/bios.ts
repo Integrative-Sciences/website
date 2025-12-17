@@ -1,10 +1,10 @@
 
 
 // Import images as modules - this is the React best practice
-import otavioImage from './assets/otavio.png';
-import lenaImage from './assets/lena.png';
-import alexImage from './assets/alex.jpg';
-import haroldoImage from './assets/haroldo.png';
+import otavioImage from '@/assets/otavio.png';
+import lenaImage from '@/assets/lena.png';
+import alexImage from '@/assets/alex.jpg';
+import haroldoImage from '@/assets/haroldo.png';
 
 export const bios = [
     {

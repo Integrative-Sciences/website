@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { bios } from '../bios';
+import { bios } from '@/lib/bios';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
-import { trackEditorProfileView, trackModalOpen, trackModalClose } from '../lib/analytics';
+import { trackEditorProfileView, trackModalOpen, trackModalClose } from '@/lib/analytics';
 import type { StaticImageData } from 'next/image';
 
 interface Editor {
